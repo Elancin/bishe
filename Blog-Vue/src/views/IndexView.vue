@@ -2,10 +2,7 @@
   <!-- 主页面 -->
   <div>
     <div class="welShow">
-      <img
-        class="avatar"
-        src="../assets/img/9086df31395ae8736bf1d512ccf73d9d0a18e240.jpg"
-      />
+      <img class="avatar" src="../assets/img/9086df31395ae8736bf1d512ccf73d9d0a18e240.jpg" />
       <br />
       <p class="text"><a href="">Elanck</a></p>
       <br />
@@ -234,7 +231,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .welShow {
   background-image: linear-gradient(to right, #dd3e54, #0083b0);
   width: 100%;
@@ -255,16 +252,16 @@ export default {
   text-align: center;
   position: relative;
   top: 35%;
-}
-.text > a {
-  font-size: 7vh;
-  text-decoration: none;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: to right, linear-gradient(to right, #dd3e54, #0083b0);
-}
-.text > a:hover {
-  font-size: 50px;
-  color: #85d6f1;
+  a{
+    font-size: 7vh;
+    text-decoration: none;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: to right, linear-gradient(to right, #dd3e54, #0083b0);
+    &:hover{
+      font-size: 50px;
+      color: #85d6f1;
+    }
+  }
 }
 .link-icon {
   position: absolute;
@@ -275,13 +272,15 @@ export default {
 .link-icon > li {
   float: left;
   list-style-type: none;
-}
-.link-icon > li > a > img {
-  padding-top: 10px;
-  margin-left: 30px;
-  margin-top: 20px;
-  width: 50px;
-  height: 50px;
+  a{
+    img{
+      padding-top: 10px;
+      margin-left: 30px;
+      margin-top: 20px;
+      width: 50px;
+      height: 50px;
+    }
+  }
 }
 
 .el-icon-arrow-down {
