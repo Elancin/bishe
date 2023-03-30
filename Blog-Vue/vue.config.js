@@ -5,5 +5,6 @@ module.exports = defineConfig({
   transpileDependencies: true,
   assetsDir: 'static',
   parallel: false,
-  publicPath: './'
+  publicPath: './',
+  lintOnSave: false
 })

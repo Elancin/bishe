@@ -3,10 +3,10 @@
   <div class="body">
     <div class="body_input">
       <el-form ref="form" :model="form" :rules="rules" label-width="120px">
-        <el-form-item label="您可爱的昵称" prop="name">
+        <el-form-item label="您的昵称" prop="name">
           <el-input autofocus clearable v-model="form.name"></el-input>
         </el-form-item>
-        <el-form-item label="您神秘的邮箱" prop="email">
+        <el-form-item label="您的邮箱" prop="email">
           <el-input clearable v-model="form.email"></el-input>
         </el-form-item>
         <el-form-item label="留言" prop="text">
@@ -26,12 +26,11 @@
       </el-form>
     </div>
     <hr />
+
     <div class="message-body" v-for="m in message" :key="m._id">
       <el-card class="box-card">
         <div slot="header" class="clearfix">
-          <span
-            ><img class="avatar" src="../assets/img/1000.jpg" alt=""
-          /></span>
+          <span><img class="avatar" src="../assets/img/1000.jpg" alt=""/></span>
           <span>{{ m.name }}</span>
           <p class="time">{{ m.time }}</p>
         </div>
@@ -40,6 +39,7 @@
         </div>
       </el-card>
     </div>
+    
   </div>
 </template>
 
@@ -86,7 +86,7 @@ export default {
     nowDate () {
       this.form.time =
         this.dayjs().format('YYYY-MM-DD HH:mm')
-      console.log(this.confirmTime)
+      // console.log(this.confirmTime)
     },
     findMessage () {
       this.$http.get('message/find').then(res => {
@@ -101,7 +101,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
 .body_input {
   z-index: 1 !important;
   position: relative;
@@ -119,15 +119,17 @@ export default {
   margin-bottom: -150px;
   width: 800px;
   height: 300px;
+  .time {
+    font-size: 15px;
+    color: rgb(142, 141, 141);
+    }
+  .avatar {
+    width: 50px;
+    margin-right: 10px;
+    border: 3 solid rgb(28, 216, 241);
+    border-radius: 50px;
+    }
 }
-.time {
-  font-size: 15px;
-  color: rgb(142, 141, 141);
-}
-.avatar {
-  width: 50px;
-  margin-right: 10px;
-  border: 3 solid rgb(28, 216, 241);
-  border-radius: 50px;
-}
+
+
 </style>

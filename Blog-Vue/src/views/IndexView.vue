@@ -2,9 +2,9 @@
   <!-- 主页面 -->
   <div>
     <div class="welShow">
-      <img class="avatar" src="../assets/img/9086df31395ae8736bf1d512ccf73d9d0a18e240.jpg" />
+      <img class="avatar" src="../assets/img/headimg.jpg" />
       <br />
-      <p class="text"><a href="">Elanck</a></p>
+      <p class="text">ELANCK</p>
       <br />
       <div class="link-icon">
         <li>
@@ -20,20 +20,14 @@
           </el-tooltip>
         </li>
         <li>
-          <el-tooltip
-            effect="light"
-            class="item"
-            content="我的B站ヾ(≧▽≦*)o"
-            placement="bottom"
-          >
-            <a href="https://space.bilibili.com/15294683" target="_blank"
-              ><img src="../assets/img/Bili.png" alt=""
-            /></a>
+          <el-tooltip  effect="light"  class="item"  content="我的B站ヾ(≧▽≦*)o"  placement="bottom">
+            <a href="https://space.bilibili.com/15294683" target="_blank"  ><img src="../assets/img/Bili.png"  /></a>
           </el-tooltip>
         </li>
       </div>
       <a href="#nva" class="el-icon-arrow-down"></a>
     </div>
+
     <div class="pageShow">
       <el-container>
         <el-header class="navigation" id="header">
@@ -79,24 +73,16 @@
               <div class="SearchText" v-show="isSearch">
                 <b>未找到搜索文章</b>
                 <br />
-                <el-button type="primary" size="default" @click="returnIndex"
-                  >返回文章列表</el-button
-                >
+                <el-button type="primary" size="default" @click="returnIndex">返回文章列表</el-button>
               </div>
               <div class="el-icon-loading loding" v-show="isShow"></div>
-              <el-table
-                v-show="isShow"
-                v-loading="isShow"
-                style="width: 100%"
-              ></el-table>
+                  <el-table
+                    v-show="isShow"
+                    v-loading="isShow"
+                    style="width: 100%"
+                  ></el-table>
               <div
-                v-for="a in article.slice(
-                  (currentPage1 - 1) * pageSize,
-                  currentPage1 * pageSize
-                )"
-                :key="a.id"
-                class="posts"
-              >
+                v-for="a in article.slice((currentPage1 - 1) * pageSize,currentPage1 * pageSize)"  :key="a.id"  class="posts">
                 <p class="posts-title" @click="articleVist(a._id)">
                   {{ a.title }}
                 </p>
@@ -236,51 +222,46 @@ export default {
   background-image: linear-gradient(to right, #dd3e54, #0083b0);
   width: 100%;
   height: 100vh;
-}
-.avatar {
+  .avatar {
   position: relative;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 180px;
-  height: 200px;
-  border-radius: 180px;
+  width: 150px;
+  height: 150px;
+  border-radius: 200px;
   border: 4px solid rgb(104, 195, 228);
 }
 .text {
-  padding-top: 10px;
+  padding-top: 30px;
   text-align: center;
   position: relative;
-  top: 35%;
-  a{
-    font-size: 7vh;
-    text-decoration: none;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    color: to right, linear-gradient(to right, #dd3e54, #0083b0);
-    &:hover{
-      font-size: 50px;
-      color: #85d6f1;
-    }
-  }
+  top: 40%;
+  font-size: 7vh;
+  text-decoration: none;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-image: linear-gradient(to right, orange, purple);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .link-icon {
   position: absolute;
-  left: 50%;
-  top: 78%;
-  transform: translate(-50%);
-}
-.link-icon > li {
+  left: 45%;
+  top: 70%;
+  li {
   float: left;
   list-style-type: none;
   a{
     img{
       padding-top: 10px;
-      margin-left: 30px;
+      margin-left: 40px;
       margin-top: 20px;
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
     }
   }
+}
 }
 
 .el-icon-arrow-down {
@@ -297,6 +278,8 @@ export default {
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
+}
+
 
 .el-menu-demo {
   position: fixed;
@@ -393,10 +376,9 @@ header {
   margin: 30%;
   font-size: 50px;
 }
-.posts {
-  font-family: Optima-Regular, Optima, -apple-system, system-ui, Segoe UI,
-    Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont,
-    Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial;
+.posts{
+  max-width: 1200px;
+  margin: 0 auto;
   position: relative;
   padding: 28px;
   border-radius: 5px;

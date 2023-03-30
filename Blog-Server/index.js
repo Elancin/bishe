@@ -53,11 +53,55 @@ const Message = mongoose.model('Message', new mongoose.Schema({
     type: String
   }
 }))
+//评论数据库模型
+const Comment = mongoose.model('Comment', new mongoose.Schema({
+  name: {
+    type: String
+  },
+  email: {
+    type: String
+  },
+  text: {
+    type: String
+  },
+  time: {
+    type: String
+  },
+  aid: {
+    type: String
+  },
+  atitle: {
+    type: String
+  }
+}))
 
 
 
 const SECRET = 'katoumegumi'
 
+// app.post('/api/changepassword', async (req, res) => {
+
+// })
+
+//添加评论
+app.post('/api/comment/add', async (req, res) => {
+  const comment = await Comment.create(req.body)
+  res.send(comment)
+})
+
+// 查询评论
+app.get('/api/comment/find', async (req, res) => {
+  const comment = await Comment.find()
+  res.send(comment)
+})
+
+//删除评论
+app.delete('/api/comment/del/:id', async (req, res) => {
+  const comment = await Comment.findByIdAndDelete(req.params.id)
+  res.send({
+    status: true
+  })
+})
 
 app.get('/api/users', async (req, res) => {
   const list = await User.find()
@@ -145,15 +189,15 @@ app.delete('/api/articles/:id', async (req, res) => {
 app.get('/api/articles/search/:search', async (req, res) => {
   const article = await Article.find({
     $or: [{
-        title: {
-          $regex: req.params.search
-        }
-      },
-      {
-        body: {
-          $regex: req.params.search
-        }
+      title: {
+        $regex: req.params.search
       }
+    },
+    {
+      body: {
+        $regex: req.params.search
+      }
+    }
     ]
   })
   res.send(article)

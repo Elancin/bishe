@@ -26,7 +26,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .el-menu-demo {
   position: fixed;
   top: 0;
@@ -36,20 +36,17 @@ export default {
   justify-content: space-between;
   align-items: center;
   transition: 0.6s;
-}
-.search {
-  width: 20%;
-}
-.logo {
-  position: relative;
-  height: 50px;
-  width: 50px;
-  border-radius: 50px;
-  border: 2px solid #eee;
-  text-decoration: none;
-  font-size: 2em;
-  letter-spacing: 2px;
-  transition: 0.6s;
+  .logo {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    border: 2px solid #eee;
+    text-decoration: none;
+    font-size: 2em;
+    letter-spacing: 2px;
+    transition: 0.6s;
+  }
 }
 
 .el-menu-item {

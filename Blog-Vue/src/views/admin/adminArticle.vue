@@ -5,21 +5,21 @@
       <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
         <el-menu router :default-openeds="['1']">
           <el-submenu index="1">
-            <template slot="title"
-              ><i class="el-icon-document-copy"></i>内容管理</template
-            >
+            <template slot="title">
+              <i class="el-icon-document-copy"></i>内容管理
+              </template>
+              <el-menu-item index="/admin-article/user">用户管理</el-menu-item>
             <el-menu-item index="/admin-article/index">文章列表</el-menu-item>
             <el-menu-item index="/admin-article/message">留言列表</el-menu-item>
+            <el-menu-item index="/admin-article/comments">评论列表</el-menu-item>
             <el-menu-item index="/admin-article/create">新建文章</el-menu-item>
           </el-submenu>
         </el-menu>
       </el-aside>
 
       <el-container>
-        <el-header style="text-align: right; font-size: 20px">
-          <el-button type="primary" size="default" @click="backIndex"
-            >返回主页</el-button
-          >
+        <el-header class="navheader">
+          <el-button type="primary" size="default" @click="backIndex">返回主页</el-button>
         </el-header>
         <el-main>
           <router-view></router-view>
@@ -63,5 +63,12 @@ export default {
   font-size: 13px;
   color: rgb(255, 255, 255);
   cursor: pointer;
+}
+.navheader{
+  text-align: right; 
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 </style>

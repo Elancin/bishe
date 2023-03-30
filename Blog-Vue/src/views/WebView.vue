@@ -34,8 +34,7 @@
               :defaultOpen="prop.defaultOpen"
               :toolbarsFlag="prop.toolbarsFlag"
               :editable="prop.editable"
-              :scrollStyle="prop.scrollStyle"
-            />
+              :scrollStyle="prop.scrollStyle"/>
           </p>
           <br />
           <p class="el-icon-time posts-time">{{ a.time }}</p>
@@ -59,13 +58,15 @@
           </el-pagination>
         </div>
       </div>
+      <div class="footer"><FooterVue></FooterVue></div>
     </div>
   </el-container>
 </template>
 
 <script>
-
+import FooterVue from '../components/FooterVue'
 export default {
+  components: { FooterVue },
   data () {
     return {
       article: [],
@@ -155,10 +156,9 @@ export default {
   margin: 30%;
   font-size: 50px;
 }
-.posts {
-  font-family: Optima-Regular, Optima, -apple-system, system-ui, Segoe UI,
-    Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont,
-    Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial;
+.posts{
+  max-width: 1200px;
+  margin: 0 auto;
   position: relative;
   padding: 28px;
   border-radius: 5px;

@@ -65,7 +65,7 @@ export default {
 }
 </script>
 
- <style scoped>
+ <style scoped >
 .goTop {
   position: fixed;
   right: 40px;

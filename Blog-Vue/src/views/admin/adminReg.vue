@@ -18,8 +18,8 @@
           class="input-item"
           v-model="user.password"
         />
-        <!-- <div class="btn">Login</div> -->
         <button class="btn" @click="sendReg">注册</button>
+        <button class="btn" @click="sendLog">前往登录</button>
       </div>
     </div>
   </div>
@@ -40,6 +40,9 @@ export default {
       this.$http.post('reg', this.user).then(res => {
         console.log(res)
       })
+    },
+    sendLog(){
+      this.$router.replace('/admin-login')
     }
   }
 }

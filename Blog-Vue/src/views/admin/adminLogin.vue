@@ -4,13 +4,7 @@
     <div class="login-wrapper">
       <img src="@/assets/img/1000.jpg" alt="" class="login-avatar" />
       <div class="form-wrapper">
-        <input
-          type="text"
-          name="username"
-          placeholder="username"
-          class="input-item"
-          v-model="user.username"
-        />
+        <input  type="text"  name="username"  placeholder="username"  class="input-item"  v-model="user.username" />
         <input
           type="password"
           name="password"
@@ -18,8 +12,8 @@
           class="input-item"
           v-model="user.password"
         />
-        <!-- <div class="btn">Login</div> -->
-        <button class="btn" @click="sendLogin">Login</button>
+        <button class="btn" @click="sendLogin">登录</button>
+        <button class="btn" @click="sendReg">前往注册</button>
       </div>
     </div>
   </div>
@@ -30,8 +24,8 @@ export default {
   data () {
     return {
       user: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: '123456'
       }
     }
   },
@@ -48,6 +42,9 @@ export default {
           offset: 100
         })
       })
+    },
+    sendReg(){
+      this.$router.replace('/admin-reg')
     }
 
   },
@@ -66,19 +63,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang='scss'>
 * {
   user-select: none;
   margin: 0;
   padding: 0;
   font-family: "Times New Roman", Times, serif;
-}
-html {
-  height: 100%;
-}
-
-body {
-  height: 100%;
 }
 .container {
   width: 100%;

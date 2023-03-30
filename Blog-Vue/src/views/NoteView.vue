@@ -6,22 +6,16 @@
         <div class="body-text" id="nva">
           <h1 class="title">前端</h1>
         </div>
+
         <div class="SearchText" v-show="isSearch">
           <b>未找到搜索文章</b>
           <br />
-          <el-button type="primary" size="default" @click="returnIndex"
-            >返回文章列表</el-button
-          >
+          <el-button type="primary" size="default" @click="returnIndex">返回文章列表</el-button>
         </div>
+
         <div class="el-icon-loading loding" v-show="isShow"></div>
-        <div
-          v-for="a in article.slice(
-            (currentPage1 - 1) * pageSize,
-            currentPage1 * pageSize
-          )"
-          :key="a.id"
-          class="posts"
-        >
+
+        <div v-for="a in article.slice((currentPage1 - 1) * pageSize, currentPage1 * pageSize)" :key="a.id" class="posts">
           <p class="posts-title" @click="articleVist(a._id)">
             {{ a.title }}
           </p>
@@ -39,12 +33,7 @@
           </p>
           <br />
           <p class="el-icon-time posts-time">{{ a.time }}</p>
-          <p
-            class="posts-article el-icon-s-promotion"
-            @click="articleVist(a._id)"
-          >
-            阅读全文
-          </p>
+          <p class="posts-article el-icon-s-promotion" @click="articleVist(a._id)">阅读全文</p>
         </div>
         <div class="block">
           <el-pagination
@@ -152,10 +141,9 @@ export default {
   margin: 30%;
   font-size: 50px;
 }
-.posts {
-  font-family: Optima-Regular, Optima, -apple-system, system-ui, Segoe UI,
-    Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont,
-    Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial;
+.posts{
+  max-width: 1200px;
+  margin: 0 auto;
   position: relative;
   padding: 28px;
   border-radius: 5px;
