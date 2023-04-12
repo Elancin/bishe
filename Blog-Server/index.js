@@ -79,9 +79,7 @@ const Comment = mongoose.model('Comment', new mongoose.Schema({
 
 const SECRET = 'katoumegumi'
 
-// app.post('/api/changepassword', async (req, res) => {
 
-// })
 
 //添加评论
 app.post('/api/comment/add', async (req, res) => {
@@ -103,9 +101,18 @@ app.delete('/api/comment/del/:id', async (req, res) => {
   })
 })
 
+//用户查询
 app.get('/api/users', async (req, res) => {
   const list = await User.find()
   res.send(list)
+})
+
+//删除用户
+app.delete('/api/users/:id', async (req, res) => {
+  await User.findByIdAndDelete(req.params.id)
+  res.send({
+    status: true
+  })
 })
 
 // 注册接口
@@ -113,7 +120,6 @@ app.post('/api/reg', async (req, res) => {
   const user = await User.create(req.body)
   console.log(user);
 })
-
 
 // 登录接口
 app.post('/api/login', async (req, res) => {

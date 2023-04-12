@@ -35,19 +35,10 @@
             <router-link to="/admin-login">
               <img class="logo" src="../assets/img/1000.jpg" alt="" />
             </router-link>
-            <el-menu-item class="el-icon-s-home" index="/index"
-              >首页</el-menu-item
-            >
-            <el-menu-item class="el-icon-reading" index="/webposts"
-              >前端</el-menu-item
-            >
-            <el-menu-item class="el-icon-notebook-2" index="/noteposts"
-              >随笔</el-menu-item
-            >
-            <el-menu-item class="el-icon-chat-dot-round" index="/message"
-              >留言板</el-menu-item
-            >
-            <el-menu-item class="el-icon-info" index="/info">关于</el-menu-item>
+            <el-menu-item class="el-icon-s-home" index="/index">首页</el-menu-item>
+            <el-menu-item class="el-icon-reading" index="/webposts">前端</el-menu-item>
+            <el-menu-item class="el-icon-notebook-2" index="/noteposts">随笔</el-menu-item>
+            <el-menu-item class="el-icon-chat-dot-round" index="/message">留言板</el-menu-item>
             <el-input
               class="search"
               placeholder="请输入内容"

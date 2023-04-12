@@ -15,7 +15,6 @@
       <el-menu-item class="el-icon-chat-dot-round" index="/message"
         >留言板</el-menu-item
       >
-      <el-menu-item class="el-icon-info" index="/info">关于</el-menu-item>
     </el-menu>
   </el-header>
 </template>
