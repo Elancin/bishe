@@ -1,6 +1,7 @@
 <template>
   <!-- 主页面 -->
   <div>
+    <!-- 个人 -->
     <div class="welShow">
       <img class="avatar" src="../assets/img/headimg.jpg" />
       <br />
@@ -27,9 +28,10 @@
       </div>
       <a href="#nva" class="el-icon-arrow-down"></a>
     </div>
-
+    
     <div class="pageShow">
       <el-container>
+        <!-- 头 -->
         <el-header class="navigation" id="header">
           <el-menu router class="el-menu-demo" mode="horizontal">
             <router-link to="/admin-login">
@@ -55,6 +57,7 @@
             >
           </el-menu>
         </el-header>
+
         <el-container>
           <div class="body">
             <div>
