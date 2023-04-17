@@ -9,7 +9,7 @@ export default new Vuex.Store({
   },
   getters: {},
   mutations: {
-    // eslint-disable-next-line space-before-function-paren
+    // 更新token，存储
     TOKEN(state, value) {
       console.log('Store:' + value)
       state.token = value

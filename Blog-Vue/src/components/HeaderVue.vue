@@ -6,15 +6,9 @@
         <img class="logo" src="../assets/img/1000.jpg" alt="" />
       </router-link>
       <el-menu-item class="el-icon-s-home" index="/index">首页</el-menu-item>
-      <el-menu-item class="el-icon-reading" index="/webposts"
-        >前端</el-menu-item
-      >
-      <el-menu-item class="el-icon-notebook-2" index="/noteposts"
-        >随笔</el-menu-item
-      >
-      <el-menu-item class="el-icon-chat-dot-round" index="/message"
-        >留言板</el-menu-item
-      >
+      <el-menu-item class="el-icon-reading" index="/webposts">前端</el-menu-item>
+      <el-menu-item class="el-icon-notebook-2" index="/noteposts">随笔</el-menu-item>
+      <el-menu-item class="el-icon-chat-dot-round" index="/message">留言板</el-menu-item>
     </el-menu>
   </el-header>
 </template>
@@ -46,10 +40,9 @@ export default {
     letter-spacing: 2px;
     transition: 0.6s;
   }
-}
-
-.el-menu-item {
+  .el-menu-item {
   font-size: 17px;
+}
 }
 #header {
   position: fixed;

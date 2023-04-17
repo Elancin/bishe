@@ -138,7 +138,7 @@ export default {
     window.removeEventListener("scroll", this.scrollHandler);
   },
   },
-  } ,
+  },
 
   created () {
     window.scrollTo(0, 0)

@@ -151,6 +151,7 @@ export default {
     }
   },
   methods: {
+    // 顶部出现
     nvaEvent () {
       window.addEventListener('scroll', function () {
         const header = document.getElementById('header')

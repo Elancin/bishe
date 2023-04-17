@@ -9,19 +9,13 @@
         <div class="SearchText" v-show="isSearch">
           <b>未找到搜索文章</b>
           <br />
-          <el-button type="primary" size="default" @click="returnIndex"
-            >返回文章列表</el-button
-          >
+          <el-button type="primary" size="default" @click="returnIndex">返回文章列表</el-button>
         </div>
         <div class="el-icon-loading loding" v-show="isShow"></div>
         <div
-          v-for="a in article.slice(
-            (currentPage1 - 1) * pageSize,
-            currentPage1 * pageSize
-          )"
+          v-for="a in article.slice((currentPage1 - 1) * pageSize,currentPage1 * pageSize)"
           :key="a.id"
-          class="posts"
-        >
+          class="posts">
           <p class="posts-title" @click="articleVist(a._id)">
             {{ a.title }}
           </p>
@@ -116,7 +110,6 @@ export default {
     },
     articleVist (id) {
       this.$router.push(`webposts/${id}`)
-      console.log(id)
       this.$store.commit('ID', id)
     }
   },

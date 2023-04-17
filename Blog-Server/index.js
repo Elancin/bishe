@@ -270,10 +270,6 @@ app.post('/api/upload_images', function (req, res) {
   })
 })
 
-
-
-
-
 app.listen(3001, () => {
   console.log('http://localhost:3001');
 })
