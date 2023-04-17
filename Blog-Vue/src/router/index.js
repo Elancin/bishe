@@ -12,7 +12,6 @@ import ListArticle from '../views/admin/ListArticle.vue'
 import EditArticle from '../views/admin/EditArticle.vue'
 import MsgView from '../views/MsgView.vue'
 import adminMessage from '../views/admin/adminMessage.vue'
-import Info from '../views/InfoView.vue'
 import adminUser from '../views/admin/adminUser'
 import adminComments from '../views/admin/adminComments'
 
@@ -64,15 +63,6 @@ export default new VueRouter({
     meta: {
       headerAlive: true,
       keepAlive: false
-    }
-  },
-  {
-    path: '/info',
-    name: 'info',
-    component: Info,
-    meta: {
-      headerAlive: true,
-      keepAlive: true
     }
   },
   {

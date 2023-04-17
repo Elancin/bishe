@@ -1,8 +1,7 @@
 <template>
-  <!-- 注册页，由于没有做权限管理，所以并不建议开放 -->
   <div class="container">
     <div class="login-wrapper">
-      <img src="@/assets/img/1000.jpg" alt="" class="login-avatar" />
+      <img src="@/assets/img/1000.jpg"  class="login-avatar" />
       <div class="form-wrapper">
         <input
           type="text"
@@ -38,8 +37,7 @@ export default {
   methods: {
     sendReg () {
       this.$http.post('reg', this.user).then(res => {
-        console.log(res)
-      })
+        console.log(res)})
     },
     sendLog(){
       this.$router.replace('/admin-login')

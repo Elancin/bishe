@@ -120,6 +120,7 @@ export default {
       return data
     },
   },
+  // 页面滚动进度条
   directives:{
     progress:{
     bind(el) {
@@ -146,7 +147,6 @@ export default {
       this.isShow = false
     }).catch(err => {
       this.isShow = true
-      console.log(err)
     })
     
   },
@@ -169,8 +169,9 @@ export default {
 }
 
 .posts {
-	margin: 0 60px;
+	margin: 20px auto;
 	border-radius: 30px;
+  max-width: 1200px;
   h4{
     margin-top: 30px;
   }
@@ -186,7 +187,7 @@ export default {
   h1{
   padding-top: 20%;
 	padding-bottom: 20px;
-	padding-left: 10%;
+	padding-left: 20%;
 	text-align: left;
 	color: #fff;
 	font-size: 40px;

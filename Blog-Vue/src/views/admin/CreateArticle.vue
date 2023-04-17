@@ -116,7 +116,7 @@ export default {
     },
     $imgAdd (pos, $file) {
       console.log('!!!!!!!!!!')
-      // 第一步.将图片上传到服务器.
+      // 将图片上传到服务器.
       const formdata = new FormData()
       formdata.append('imgFile', $file)
       this.img_file[pos] = $file
@@ -126,7 +126,7 @@ export default {
         data: formdata
       }).then((res) => {
         const _res = res.data
-        // 第二步.将返回的url替换到文本原位置[外链图片转存失败(img-v2eG7egk-1562220599730)(0)] -> [外链图片转存失败(img-RmlJ1kIp-1562220599733)(url)]
+        // 将返回的url替换到文本原位置[外链图片转存失败(img-v2eG7egk-1562220599730)(0)] -> [外链图片转存失败(img-RmlJ1kIp-1562220599733)(url)]
         this.$refs.md.$img2Url(pos, _res.url)
       })
     },

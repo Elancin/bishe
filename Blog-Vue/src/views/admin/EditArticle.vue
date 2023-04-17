@@ -10,7 +10,13 @@
       <el-input v-model="article.title"></el-input>
     </el-form-item>
     <el-form-item label="文章内容">
-      <mavon-editor :toolbars="markdownOption" v-model="article.body" />
+      <mavon-editor 
+      ref="md"
+      :toolbars="markdownOption" 
+      v-model="article.body" 
+      @imgAdd="$imgAdd" 
+      @imgDel="$imgDel" 
+      />
     </el-form-item>
     <el-form-item>
       <el-button type="primary" native-type="submit">保存</el-button>
@@ -25,7 +31,8 @@ export default {
       article: {
         title: '',
         body: ''
-      }
+      },
+      img_file: [],
     }
   },
   methods: {
@@ -46,6 +53,23 @@ export default {
     },
     cancel () {
       this.$router.push('/admin-article/index')
+    },
+    $imgAdd (pos, $file) {
+      // 第一步.将图片上传到服务器.
+      const formdata = new FormData()
+      formdata.append('imgFile', $file)
+      this.img_file[pos] = $file
+      this.$http({
+        url: '/upload_images',
+        method: 'post',
+        data: formdata
+      }).then((res) => {
+        const _res = res.data
+        this.$refs.md.$img2Url(pos, _res.url)
+      })
+    },
+    $imgDel (pos) {
+      delete this.img_file[pos]
     }
   },
   created () {
