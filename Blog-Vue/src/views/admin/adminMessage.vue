@@ -6,7 +6,7 @@
       <el-table-column prop="email" label="邮箱" width="100"> </el-table-column>
       <el-table-column prop="text" label="内容" width="200"> </el-table-column>
       <el-table-column fixed="right" label="操作" width="100">
-        <template slot-scope="scope">
+        <template  slot-scope="scope">
           <el-button @click="remove(scope.row._id)" type="text" size="big">删除</el-button>
         </template>
       </el-table-column>

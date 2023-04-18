@@ -5,9 +5,7 @@
       <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
         <el-menu router :default-openeds="['1']">
           <el-submenu index="1">
-            <template slot="title">
-              <i class="el-icon-document-copy"></i>内容管理
-              </template>
+            <template v-slot:title><i class="el-icon-document-copy"></i>内容管理</template>
             <el-menu-item index="/admin-article/user">用户管理</el-menu-item>
             <el-menu-item index="/admin-article/index">文章列表</el-menu-item>
             <el-menu-item index="/admin-article/message">留言列表</el-menu-item>

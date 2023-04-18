@@ -42,7 +42,9 @@ export default {
     goTop () {
       let timer = null
       const _that = this
+      // 取消前一次执行的动画帧请求
       cancelAnimationFrame(timer)
+      
       timer = requestAnimationFrame(function fn () {
         if (_that.scrollTop > 0) {
           _that.scrollTop -= 250

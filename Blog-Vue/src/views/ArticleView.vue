@@ -126,9 +126,13 @@ export default {
     bind(el) {
     const progressBar = el;
     const scrollHandler = function () {
+      // 滚动条的当前位置
       const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      // 总高度
       const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+      // 窗口可视区域的高度
       const clientHeight = document.documentElement.clientHeight || window.innerHeight;
+      
       const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
       progressBar.style.width = scrollPercent + "%";
     };

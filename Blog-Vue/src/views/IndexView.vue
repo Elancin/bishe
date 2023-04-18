@@ -48,13 +48,7 @@
               v-model="search"
             >
             </el-input>
-            <el-button
-              class="searchBtn"
-              type="primary"
-              size="small"
-              @click="Search"
-              >搜索</el-button
-            >
+            <el-button  class="searchBtn"  type="primary"  size="small"  @click="Search">搜索</el-button>
           </el-menu>
         </el-header>
 
@@ -74,11 +68,8 @@
                     v-show="isShow"
                     v-loading="isShow"
                     style="width: 100%"></el-table>
-              <div
-                v-for="a in article.slice((currentPage1 - 1) * pageSize,currentPage1 * pageSize)"  :key="a.id"  class="posts">
-                <p class="posts-title" @click="articleVist(a._id)">
-                  {{ a.title }}
-                </p>
+              <div v-for="a in article.slice((currentPage1 - 1) * pageSize,currentPage1 * pageSize)"  :key="a.id"  class="posts">
+                <p class="posts-title" @click="articleVist(a._id)">{{ a.title }}</p>
                 <br />
                 <p class="posts-body">
                   <mavon-editor

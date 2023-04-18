@@ -3,12 +3,10 @@
   <div>
     <div style="height: 60px"></div>
     <el-footer class="footer">
-      ©2022-2023 <b>Elanck</b>
+      <b>Elanck</b>
       <br />
       <div>
-        <a class="beian" href="http://beian.miit.gov.cn/" target="_blank"
-          ></a
-        >
+        <a class="beian" href="http://beian.miit.gov.cn/" target="_blank">蜀ICP备2022022550号-1</a>
       </div>
     </el-footer>
   </div>
@@ -22,7 +20,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .footer {
   margin-top: 50px;
   padding-bottom: 10px;
@@ -33,9 +31,10 @@ export default {
   width: 100%;
   height: 50px;
   z-index: 9999;
-}
-.beian {
+  .beian {
   text-decoration: none;
   color: var(--default-text-color);
 }
+}
+
 </style>

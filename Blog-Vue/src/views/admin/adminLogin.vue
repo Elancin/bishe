@@ -5,13 +5,7 @@
       <img src="@/assets/img/1000.jpg" alt="" class="login-avatar" />
       <div class="form-wrapper">
         <input  type="text"  name="username"  placeholder="username"  class="input-item"  v-model="user.username" />
-        <input
-          type="password"
-          name="password"
-          placeholder="password"
-          class="input-item"
-          v-model="user.password"
-        />
+        <input  type="password"  name="password" placeholder="password"  class="input-item"  v-model="user.password" />
         <button class="btn" @click="sendLogin">登录</button>
         <button class="btn" @click="sendReg">前往注册</button>
       </div>
@@ -35,7 +29,7 @@ export default {
         this.token = res.data.token
         this.$store.commit('TOKEN', this.token)
         this.$router.push('/admin-article')
-      }).catch((err) => {
+      }).catch((err) => { 
         this.$message({
           message: err.response.data.message,
           type: 'error',

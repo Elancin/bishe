@@ -98,8 +98,13 @@ export default {
   },
   methods: {
     saveArticle () {
+      if(this.article.title===''){
+          this.$message({
+          message: '请输入标题',
+          type: 'error'
+        })
+      }else{
       this.nowDate()
-      console.log(this.article.time)
       this.$http.post('/articles', this.article).then(res => {
         this.$message({
           message: '文章创建成功',
@@ -108,6 +113,17 @@ export default {
         this.$router.push('/admin-article/index')
         console.log(res)
       })
+      }
+      // this.nowDate()
+      // // console.log(this.article.time)
+      // this.$http.post('/articles', this.article).then(res => {
+      //   this.$message({
+      //     message: '文章创建成功',
+      //     type: 'success'
+      //   })
+      //   this.$router.push('/admin-article/index')
+      //   console.log(res)
+      // })
     },
     nowDate () {
       this.article.time =

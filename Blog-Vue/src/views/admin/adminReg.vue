@@ -3,20 +3,8 @@
     <div class="login-wrapper">
       <img src="@/assets/img/1000.jpg"  class="login-avatar" />
       <div class="form-wrapper">
-        <input
-          type="text"
-          name="username"
-          placeholder="username"
-          class="input-item"
-          v-model="user.username"
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="password"
-          class="input-item"
-          v-model="user.password"
-        />
+        <input  type="text"  name="username"  placeholder="username"  class="input-item"  v-model="user.username"  />
+        <input  type="password"  name="password"  placeholder="password"  class="input-item"  v-model="user.password"  />
         <button class="btn" @click="sendReg">注册</button>
         <button class="btn" @click="sendLog">前往登录</button>
       </div>
@@ -36,8 +24,16 @@ export default {
   },
   methods: {
     sendReg () {
-      this.$http.post('reg', this.user).then(res => {
-        console.log(res)})
+      if(this.user.username===''||this.user.password===''){
+          this.$message({
+          message: '请输入用户名或密码',
+          type: 'error'
+        })
+      }else{
+        this.$http.post('reg', this.user).then(res => {
+        console.log(res)
+        })
+      }
     },
     sendLog(){
       this.$router.replace('/admin-login')

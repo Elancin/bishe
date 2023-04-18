@@ -7,7 +7,6 @@
       <el-table-column prop="password" label="密码" width="300"> </el-table-column>
       <el-table-column fixed="right" label="操作" width="100">
         <template slot-scope="scope">
-          <el-button  type="text" size="big" @click='open'>修改密码</el-button>
           <el-button  type="text" size="big" @click=remove(scope.row._id)>删除用户</el-button>
         </template>
       </el-table-column>
@@ -20,7 +19,6 @@ export default {
   data() {
     return {
       users: [],
-
     };
   },
   methods: {
@@ -29,26 +27,6 @@ export default {
         this.users = res.data;
       });
     },
-    open() {
-        this.$prompt('新的密码', '修改密码', {
-          confirmButtonText: '确定',
-          cancelButtonText: '取消',
-        }).then(({ value }) => {
-          this.$message({
-            type: 'success',
-            message: '密码修改成功',
-          });
-        this.$http.post('/changepassword', value).then(res => {
-        console.log(res)
-        console.log(value);
-      })
-        }).catch(() => {
-          this.$message({
-            type: 'info',
-            message: '取消修改'
-          });       
-        });
-      },
     remove (id) {
       this.$http.delete(`users/${id}`).then(res => {
         this.$message({

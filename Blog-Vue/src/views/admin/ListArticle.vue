@@ -6,12 +6,8 @@
       <el-table-column prop="body" label="内容" width="800"> </el-table-column>
       <el-table-column fixed="right" label="操作" width="100">
         <template slot-scope="scope">
-          <el-button @click="edit(scope.row._id)" type="text" size="big"
-            >编辑</el-button
-          >
-          <el-button @click="remove(scope.row._id)" type="text" size="big"
-            >删除</el-button
-          >
+          <el-button @click="edit(scope.row._id)" type="text" size="big">编辑</el-button>
+          <el-button @click="remove(scope.row._id)" type="text" size="big">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
