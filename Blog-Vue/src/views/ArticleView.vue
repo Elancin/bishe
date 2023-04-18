@@ -1,7 +1,7 @@
 <template>
   <div>
     <BackTop></BackTop>
-    <!-- 文章详情 -->
+    <!-- 阅读进度 -->
     <div class="progress-bar" v-progress></div>
     <!-- 标题 -->
     <div class="HeaderBaci">

@@ -73,8 +73,7 @@
                   <el-table
                     v-show="isShow"
                     v-loading="isShow"
-                    style="width: 100%"
-                  ></el-table>
+                    style="width: 100%"></el-table>
               <div
                 v-for="a in article.slice((currentPage1 - 1) * pageSize,currentPage1 * pageSize)"  :key="a.id"  class="posts">
                 <p class="posts-title" @click="articleVist(a._id)">
@@ -94,12 +93,7 @@
                 </p>
                 <br />
                 <p class="el-icon-time posts-time">{{ a.time }}</p>
-                <p
-                  class="posts-article el-icon-s-promotion"
-                  @click="articleVist(a._id)"
-                >
-                  阅读全文
-                </p>
+                <p class="posts-article el-icon-s-promotion" @click="articleVist(a._id)">阅读全文</p>
               </div>
               <div class="block">
                 <el-pagination
@@ -108,7 +102,6 @@
                   :total="total"
                   :current-Page="currentPage1"
                   :page-size="pageSize"
-                  @size-change="handleSizeChange"
                   @current-change="handleCurrentChange"
                 >
                 </el-pagination>
@@ -179,16 +172,12 @@ export default {
       this.isSearch = false
       this.getArticle()
     },
-    handleSizeChange (val) {
-      console.log(`每页 ${val} 条`)
-    },
     handleCurrentChange (val) {
       this.currentPage1 = val
       console.log(`当前页: ${val}`)
     },
     articleVist (id) {
       this.$router.push(`webposts/${id}`)
-      this.$store.commit('ID', id)
     },
     getArticle () {
       this.$http.get('articles').then(res => {

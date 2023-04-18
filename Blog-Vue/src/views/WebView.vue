@@ -11,6 +11,7 @@
           <br />
           <el-button type="primary" size="default" @click="returnIndex">返回文章列表</el-button>
         </div>
+        <!-- loding -->
         <div class="el-icon-loading loding" v-show="isShow"></div>
         <div
           v-for="a in article.slice((currentPage1 - 1) * pageSize,currentPage1 * pageSize)"
